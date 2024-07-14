@@ -8,7 +8,7 @@ from db_connection import db
 
 
 ##############################################################################
-def delete_last_logins():
+def delete_last_logins_data():
     # Access the 'Session' collection
     collection = db['session']
 
