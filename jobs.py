@@ -2,46 +2,35 @@
 
 # Libraries
 ##############################################################################
-import json
-import os
-import logging
 import schedule
-import requests
 import time
-from mongoengine import connect
+
+from Modules.last_logins import delete_last_logins_data
+from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
 
 # Configs
 ##############################################################################
-def load_config(file_path):
-    with open(file_path, 'r') as file:
-        config_data = json.load(file)
-    return config_data
 
-# Specify the path to your JSON configuration file
-config_file_path = 'config.json'
-
-# Load configuration from the JSON file
-config = load_config(config_file_path)
-
-# Get Scheduled Jobs from Config
-scheduled_jobs = config['scheduled_jobs']
-
-# Get DB Configs from Config
-db_attrs = config['database']
-
-# DB Config
-try:
-    db = connect(
-        host     = db_attrs.get('HOST'),
-        port     = db_attrs.get('PORT'),
-        db       = db_attrs.get('DB'),
-        username = db_attrs.get('USERNAME'), 
-        password = db_attrs.get('PASSWORD')
-    )
-    print("DB connection successful")
-except Exception as e:
-    print(f'MongoDB connection failed: {e}')
 ##############################################################################
 
-# 
+# Main
+##############################################################################
+
+delete_last_logins_data()
+
+# Schedule jobs
+for job_name, job_config in scheduled_jobs.items():
+    if "interval" in job_config:
+        interval = job_config["interval"]
+        unit = job_config.get("unit", "minutes")
+        getattr(schedule.every(interval), unit).do(eval(job_name))
+    elif "time" in job_config:
+        time_str = job_config["time"]
+        schedule.every().day.at(time_str).do(eval(job_name))
+
+# Run 
+while True:
+    schedule.run_pending()
+    time.sleep(60)  # Check every 60 seconds
+##############################################################################
