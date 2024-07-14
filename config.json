@@ -1,0 +1,13 @@
+{
+    "database":{
+        "HOST": "mongo-db",
+        "PORT": 27017,
+        "DB": "dashboard",
+        "USERNAME": "admin",
+        "PASSWORD": "your_mongo_admin_password"
+    },
+    "scheduled_jobs":{
+        "delete_last_logins_data":{"interval": 10, "unit": "minutes"},
+        "delete_disk_usage_data":{"interval": 10, "unit": "minutes"}
+    }
+}
