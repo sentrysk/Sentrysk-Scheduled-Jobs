@@ -19,7 +19,7 @@ from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
 
 # Run the functions before scheduling
-#delete_last_logins_data()
+delete_last_logins_data()
 delete_disk_usage_data()
 
 # Schedule jobs
