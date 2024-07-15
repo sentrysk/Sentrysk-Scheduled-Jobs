@@ -6,6 +6,7 @@ import schedule
 import time
 
 from Modules.last_logins import delete_last_logins_data
+from Modules.disk_usage import delete_disk_usage_data
 from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
 
@@ -18,7 +19,8 @@ from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
 
 # Run the functions before scheduling
-delete_last_logins_data()
+#delete_last_logins_data()
+delete_disk_usage_data()
 
 # Schedule jobs
 for job_name, job_config in scheduled_jobs.items():
