@@ -2,6 +2,7 @@
 
 # Libraries
 ##############################################################################
+import logging
 from datetime import datetime, timedelta
 from db_connection import db
 ##############################################################################
@@ -22,5 +23,5 @@ def delete_last_logins_data():
     result = collection.delete_many(query)
     
     # Print each session
-    print(f"Deleted {result.deleted_count} old sessions.")
+    logging.info(f"Deleted {result.deleted_count} old sessions.")
 ##############################################################################
