@@ -4,6 +4,7 @@
 ##############################################################################
 import schedule
 import time
+import logging
 
 from Modules.last_logins import delete_last_logins_data
 from Modules.disk_usage import delete_disk_usage_data
@@ -12,7 +13,19 @@ from configs import SCHEDULED_JOBS as scheduled_jobs
 
 # Configs
 ##############################################################################
+# Logging Format
+FORMAT = '%(asctime)s :: %(levelname)-6s :: %(name)s :: [%(filename)s:%(lineno)s - %(funcName)s()] :: %(message)s'
 
+# Logfile
+logfile_path = 'jobs_logs.log'
+
+# Configure logging to write logs to a log file
+logging.basicConfig(
+    filename=logfile_path, 
+    level=logging.INFO,
+    format=FORMAT,
+    encoding='utf-8'
+)
 ##############################################################################
 
 # Main
