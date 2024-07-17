@@ -7,7 +7,7 @@
         "PASSWORD": "your_mongo_admin_password"
     },
     "scheduled_jobs":{
-        "delete_last_logins_data":{"interval": 10, "unit": "minutes"},
-        "delete_disk_usage_data":{"interval": 10, "unit": "minutes"}
+        "delete_last_logins_data":{"time": "01:00"},
+        "delete_disk_usage_data":{"time": "01:00"}
     }
 }
