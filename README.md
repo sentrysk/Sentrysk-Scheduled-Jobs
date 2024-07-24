@@ -12,3 +12,8 @@ To keep database safe we are deleting last logins more than **30 days**.
 To keep database safe we are deleting disk usage data more than **7 days**.
 
 [Delete disk usage data](https://github.com/sentrysk/Sentrysk-Scheduled-Jobs/blob/main/Modules/disk_usage.py)
+
+## 3 Delete Memory Usage Data
+To keep database safe we are deleting memory usage data more than **7 days**.
+
+[Delete memory usage data](https://github.com/sentrysk/Sentrysk-Scheduled-Jobs/blob/main/Modules/memory_usage.py)
