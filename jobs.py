@@ -36,6 +36,7 @@ logging.basicConfig(
 # Run the functions before scheduling
 delete_last_logins_data()
 delete_disk_usage_data()
+delete_memory_usage_data()
 
 # Schedule jobs
 for job_name, job_config in scheduled_jobs.items():
