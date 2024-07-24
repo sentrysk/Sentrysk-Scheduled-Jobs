@@ -8,6 +8,8 @@ import logging
 
 from Modules.last_logins import delete_last_logins_data
 from Modules.disk_usage import delete_disk_usage_data
+from Modules.memory_usage import delete_memory_usage_data
+
 from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
 
@@ -34,6 +36,7 @@ logging.basicConfig(
 # Run the functions before scheduling
 delete_last_logins_data()
 delete_disk_usage_data()
+delete_memory_usage_data()
 
 # Schedule jobs
 for job_name, job_config in scheduled_jobs.items():
