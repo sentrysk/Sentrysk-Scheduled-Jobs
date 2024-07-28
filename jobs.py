@@ -9,6 +9,7 @@ import logging
 from Modules.last_logins import delete_last_logins_data
 from Modules.disk_usage import delete_disk_usage_data
 from Modules.memory_usage import delete_memory_usage_data
+from Modules.cpu_usage import delete_cpu_usage_data
 
 from configs import SCHEDULED_JOBS as scheduled_jobs
 ##############################################################################
