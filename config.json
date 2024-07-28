@@ -9,6 +9,7 @@
     "scheduled_jobs":{
         "delete_last_logins_data":{"time": "01:00"},
         "delete_disk_usage_data":{"time": "01:00"},
-        "delete_memory_usage_data":{"time": "01:00"}
+        "delete_memory_usage_data":{"time": "01:00"},
+        "delete_cpu_usage_data":{"time": "01:00"}
     }
 }
