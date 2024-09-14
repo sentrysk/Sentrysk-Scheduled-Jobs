@@ -11,5 +11,11 @@
         "delete_disk_usage_data":{"time": "01:00"},
         "delete_memory_usage_data":{"time": "01:00"},
         "delete_cpu_usage_data":{"time": "01:00"}
+    },
+    "deletion_periods":{
+        "last_logins": 30,
+        "cpu_usage": 3,
+        "memory_usage": 3,
+        "disk_usage": 7
     }
 }
