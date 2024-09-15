@@ -23,4 +23,7 @@ SCHEDULED_JOBS = config['scheduled_jobs']
 
 # Get DB Configs from Config
 DB_ATTRS = config['database']
+
+# Deletion Periods
+DELETION_PERIODS = config['deletion_periods']
 ##############################################################################
