@@ -25,5 +25,5 @@ SCHEDULED_JOBS = config['scheduled_jobs']
 DB_ATTRS = config['database']
 
 # Deletion Periods
-DELETION_PERIODS = config['deletion_periods']
+LAST_LOGIN_DEL_PER = config['deletion_periods']['last_logins']
 ##############################################################################
