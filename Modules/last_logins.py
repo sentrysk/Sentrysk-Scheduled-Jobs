@@ -5,6 +5,7 @@
 import logging
 from datetime import datetime, timedelta
 from db_connection import db
+from configs import LAST_LOGIN_DEL_PER
 ##############################################################################
 
 
@@ -14,9 +15,9 @@ def delete_last_logins_data():
     collection = db['session']
 
     # Calculate the date 7 days ago from now
-    thirty_days_ago = datetime.now() - timedelta(days=30)
+    thirty_days_ago = datetime.now() - timedelta(days=LAST_LOGIN_DEL_PER)
 
-    # Define the query to find documents with 'Created' date older than 30 days
+    # Define the query to find documents with 'Created' date older than X days
     query = {"created": {"$lt": thirty_days_ago}}
     
     # Perform the deletion
