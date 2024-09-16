@@ -28,4 +28,5 @@ DB_ATTRS = config['database']
 LAST_LOGIN_DEL_PER = config['deletion_periods']['last_logins']
 CPU_USAGE_DEL_PER = config['deletion_periods']['cpu_usage']
 MEMORY_USAGE_DEL_PER = config['deletion_periods']['memory_usage']
+DISK_USAGE_DEL_PER = config['deletion_periods']['disk_usage']
 ##############################################################################
