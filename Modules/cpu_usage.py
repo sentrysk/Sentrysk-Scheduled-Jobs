@@ -5,6 +5,7 @@
 import logging
 from datetime import datetime, timedelta
 from db_connection import db
+from configs import CPU_USAGE_DEL_PER
 ##############################################################################
 
 
@@ -14,7 +15,7 @@ def delete_cpu_usage_data():
     collection = db['cpu_usage']
 
     # Calculate the date X days ago from now
-    x_days_ago = datetime.now() - timedelta(days=3)
+    x_days_ago = datetime.now() - timedelta(days=CPU_USAGE_DEL_PER)
 
     # Define the query to find documents with 'timestamp' date older than X days
     query = {"timestamp": {"$lt": x_days_ago}}
